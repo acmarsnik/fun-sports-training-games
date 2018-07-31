@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
+const options = {headers: new HttpHeaders({'Content-Type': 'application/json' })};
 @Injectable({
   providedIn: 'root'
 })
@@ -11,8 +12,9 @@ export class TargetService {
   constructor(private http: HttpClient) { }
 
   addTarget(target_score: number){
-    this.target_scores.push(target_score);
-    console.log(this.target_scores);
+    const url = 'api/targetScores';
+    return this.http.post<{ id: number, score: number }[]>(url, target_score, options)
+    .pipe();
   }
 
   deleteTarget(index: number){

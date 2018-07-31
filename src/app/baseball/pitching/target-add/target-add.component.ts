@@ -13,13 +13,15 @@ export class TargetAddComponent implements OnInit {
   score: number;
   isVisible: boolean = false;
   showHideText: string = 'Show';
+  targetScores: { id: number, score: number}[] = [];
 
-  constructor(private fb: FormBuilder, private TargetService: TargetService) {
+  constructor(private fb: FormBuilder, private targetService: TargetService) {
     this.createForm();
     this.inputForm.setValue({scoreInput: 0})
   }
 
   ngOnInit() {
+    this.getTargetScores();
   }
 
   createForm() {
@@ -30,7 +32,9 @@ export class TargetAddComponent implements OnInit {
 
   onSubmit(){
     this.score = this.inputForm.value.scoreInput;
-    this.TargetService.addTarget(this.score);
+    this.targetService.addTarget(this.score).subscribe(it => {
+      this.targetScores = it;
+    } );
     
   }
 
@@ -43,6 +47,14 @@ export class TargetAddComponent implements OnInit {
       this.isVisible = true;
       this.showHideText = 'Hide'
     }
+  }
+
+  getTargetScores(){
+    this.targetService.getTargetScores()
+    .subscribe(it => {
+      this.targetScores = it;
+      console.log(this.targetScores);
+    })
   }
 
 }

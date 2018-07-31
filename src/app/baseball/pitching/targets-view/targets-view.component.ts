@@ -7,21 +7,15 @@ import { TargetService } from '../../../services/target.service';
   styleUrls: ['./targets-view.component.scss']
 })
 export class TargetsViewComponent implements OnInit {
-  targetScores: { id: number, score: number }[] = [];
+  @Input() targetScores: { id: number, score: number }[] = [];
   @Input() isVisible: boolean;
 
-  constructor(private targetService: TargetService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.getTargetScores();
+    
   }
 
-  getTargetScores(){
-    this.targetService.getTargetScores()
-    .subscribe(it => {
-      this.targetScores = it;
-      console.log(this.targetScores);
-    })
-  }
+  
 
 }
