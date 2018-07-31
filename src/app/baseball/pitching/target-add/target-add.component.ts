@@ -53,7 +53,6 @@ export class TargetAddComponent implements OnInit {
     this.targetService.getTargetScores()
     .subscribe(it => {
       this.targetScores = it;
-      console.log(this.targetScores);
     })
   }
 
