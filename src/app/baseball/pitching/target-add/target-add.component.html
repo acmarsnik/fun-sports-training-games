@@ -1,0 +1,21 @@
+<form [formGroup]="inputForm" (ngSubmit)="onSubmit()">
+  <div class="row">
+    <div class="col-md-4">
+
+    </div>
+    <div class="col-md-4">
+      <div class="form-row">
+        <div class="form-group col-md-12">
+          <input id="scoreInput" type="number" formControlName="scoreInput" min="0" max="10">
+          <button type="submit">Submit</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+
+    </div>
+  </div>
+
+</form>
+<button (click)="showHide()">{{showHideText}}</button>
+<app-targets-view [isVisible]="isVisible"></app-targets-view>
