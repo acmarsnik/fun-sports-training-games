@@ -48,6 +48,23 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true
+            },
+            "local": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.local.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
             }
           }
         },
@@ -59,6 +76,9 @@
           "configurations": {
             "production": {
               "browserTarget": "fun-sports-training-games:build:production"
+            },
+            "local": {
+              "browserTarget": "fun-sports-training-games:build:local"
             }
           }
         },
@@ -112,6 +132,9 @@
           "configurations": {
             "production": {
               "devServerTarget": "fun-sports-training-games:serve:production"
+            },
+            "local": {
+              "devServerTarget": "fun-sports-training-games:serve:local"
             }
           }
         },
