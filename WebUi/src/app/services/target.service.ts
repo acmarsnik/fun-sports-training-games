@@ -25,8 +25,15 @@ export class TargetService {
     return this.target_scores;
   }
 
-  getTargetScores(): Observable<{ id: number, score: number }[]> {
+  /* getTargetScores(): Observable<{ id: number, score: number }[]> {
     const url = 'api/targetScores';
+    return this.http.get<{ id: number, score: number }[]>(url)
+    .pipe(
+    );
+  } */
+
+  getTargetScores(): Observable<{ id: number, score: number }[]> {
+    const url = 'http://localhost:58247/api/Scores';
     return this.http.get<{ id: number, score: number }[]>(url)
     .pipe(
     );

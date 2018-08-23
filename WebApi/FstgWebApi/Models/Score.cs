@@ -7,8 +7,9 @@ namespace FstgWebApi.Models
 {
     public class Score
     {
-        public double Value { get; set; }
-        public int Id { get; set; }
+        
+        public int id { get; set; }
+        public int score { get; set; }
 
     }
 }
