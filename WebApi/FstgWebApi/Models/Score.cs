@@ -8,9 +8,9 @@ namespace FstgWebApi.Models
 {
     public class Score
     {
-        [BsonId]
+        //[BsonId]
         public int id { get; set; }
-        [BsonElement]
+        //[BsonElement]
         public int score { get; set; }
 
     }

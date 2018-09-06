@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
@@ -11,7 +12,7 @@ namespace FstgWebApi.Controllers
 {
     [ApiController]
     [Produces("application/json")]
-    [Route("api/getTargetScores")]
+    [Route("api/[controller]")]
     public class ScoresController : Controller
     {
         public IActionResult Get()
@@ -31,6 +32,16 @@ namespace FstgWebApi.Controllers
             };
 
             var output = StatusCode((int)HttpStatusCode.OK, response);
+            return output;
+        }
+
+        // PUT api/values/5
+        [HttpPut]
+        public IActionResult Put([FromBody]NewScore newScore)
+        {
+            Debug.Write($"Score: {newScore.Score}, UserId: {newScore.UserId}");
+            var response = new { status = "Created" };
+            var output = StatusCode((int)HttpStatusCode.Created, response);
             return output;
         }
     }

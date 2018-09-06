@@ -9,15 +9,14 @@ const options = {headers: new HttpHeaders({'Content-Type': 'application/json' })
 })
 export class TargetService {
   target_scores: number[] = [0, 1];
-  getTargetScoresUrl = environment.getTargetScoresUrl;
-  
-
+  scoresUrl = environment.scoresUrl;
 
   constructor(private http: HttpClient) { }
 
   addTarget(target_score: number){
-    const url = 'api/targetScores';
-    return this.http.post<{ id: number, score: number }[]>(url, target_score, options)
+    console.log(target_score);
+    const data = {userId: 1, score: target_score};
+    return this.http.put(this.scoresUrl, data, options)
     .pipe();
   }
 
@@ -37,7 +36,7 @@ export class TargetService {
   } */
 
   getTargetScores(): Observable<{ id: number, score: number }[]> {
-    return this.http.get<{ id: number, score: number }[]>(this.getTargetScoresUrl)
+    return this.http.get<{ id: number, score: number }[]>(this.scoresUrl)
     .pipe(
     );
   }
