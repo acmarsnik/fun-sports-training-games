@@ -11,7 +11,7 @@ namespace FstgWebApi.Controllers
 {
     [ApiController]
     [Produces("application/json")]
-    [Route("api/Scores")]
+    [Route("api/getTargetScores")]
     public class ScoresController : Controller
     {
         public IActionResult Get()

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { environment } from '../../environments/environment.local';
 
 const options = {headers: new HttpHeaders({'Content-Type': 'application/json' })};
 @Injectable({
@@ -8,6 +9,9 @@ const options = {headers: new HttpHeaders({'Content-Type': 'application/json' })
 })
 export class TargetService {
   target_scores: number[] = [0, 1];
+  getTargetScoresUrl = environment.getTargetScoresUrl;
+  
+
 
   constructor(private http: HttpClient) { }
 
@@ -33,8 +37,7 @@ export class TargetService {
   } */
 
   getTargetScores(): Observable<{ id: number, score: number }[]> {
-    const url = 'http://localhost:58247/api/Scores';
-    return this.http.get<{ id: number, score: number }[]>(url)
+    return this.http.get<{ id: number, score: number }[]>(this.getTargetScoresUrl)
     .pipe(
     );
   }

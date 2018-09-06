@@ -1,4 +1,6 @@
+const baseUrl = 'http://localhost:58247/api/';
+
 export const environment = {
-    production: false,
-    baseUrl: 'http://localhost:58247/'
-  };
+  production: false,
+  getTargetScoresUrl: baseUrl + 'getTargetScores'
+};
