@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
+using BC = BusinessContracts;
 using FstgWebApi.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -31,7 +32,17 @@ namespace FstgWebApi.Controllers
                 new Score { id = 10, score = 9 }
             };
 
-            var output = StatusCode((int)HttpStatusCode.OK, response);
+			var scores = scoreManager.GetScores();
+			foreach (var score in scores)
+			{
+				response.Add(
+					new Score {
+						id = score.Id,
+						score = score.Value
+					});
+			}
+
+			var output = StatusCode((int)HttpStatusCode.OK, response);
             return output;
         }
 
@@ -44,5 +55,13 @@ namespace FstgWebApi.Controllers
             var output = StatusCode((int)HttpStatusCode.Created, response);
             return output;
         }
-    }
+
+
+		public ScoresController(BC.IScoresManager scoreManager)
+		{
+			this.scoreManager = scoreManager;
+		}
+
+		private readonly BC.IScoresManager scoreManager;
+	}
 }

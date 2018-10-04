@@ -1,5 +1,7 @@
 ﻿using Autofac;
 using Autofac.Extensions.DependencyInjection;
+using BusinessContracts;
+using BusinessLogic;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -23,6 +25,8 @@ namespace FstgWebApi.DependencyInjection
 			//		(pi, ctx) => ctx.ResolveKeyed<IConnectionFactory>("odbc-agdatawarehouse")))
 			//	.As<IOdbcDbContext>().Keyed<IOdbcDbContext>("odbc-agdatawarehouse");
 
+
+			builder.RegisterType<ScoresManager>().As<IScoresManager>().InstancePerLifetimeScope();
 
 			builder.Populate(services);
 			return builder.Build();
