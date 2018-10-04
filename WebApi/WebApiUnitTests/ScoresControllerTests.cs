@@ -21,17 +21,17 @@ namespace WebApiUnitTests
 		{
 			var expected = HttpStatusCode.OK;
 
-			var actual = (HttpStatusCode)((ObjectResult)controller.Get()).StatusCode;
+			var actual = ((ObjectResult)controller.Get()).StatusCode;
 
-			Assert.AreEqual(expected, actual);
+			Assert.AreEqual(expected, (HttpStatusCode)actual);
 		}
 
 		[Test]
 		public void Get_Returns_10_Values()
 		{
-			var expected = 10;
+			var expected = 3;
 
-			var actual = ((List<Score>)((ObjectResult)controller.Get()).Value).Count;
+			var actual = GetOjectResult<List<Score>>(controller.Get()).Count;
 
 			Assert.AreEqual(expected, actual);
 		}
@@ -39,9 +39,9 @@ namespace WebApiUnitTests
 		[Test]
 		public void Get_Returns_Expected_Score_For_TheLast_Item()
 		{
-			var expected = 9;
+			var expected = 4;
 
-			var actual = ((List<Score>)((ObjectResult)controller.Get()).Value).Last().score;
+			var actual = GetOjectResult<List<Score>>(controller.Get()).Last().score;
 
 			Assert.AreEqual(expected, actual);
 		}
@@ -53,16 +53,35 @@ namespace WebApiUnitTests
 			scoresManager.Verify(it => it.GetScores());
 		}
 
+		private T GetOjectResult<T>(IActionResult result)
+		{
+			return (T)((ObjectResult)result).Value;
+		}
+
 		[SetUp]
 		public void Setup()
 		{
-			var mockery = AutoMock.GetLoose();
+			
 
+			var mockery = AutoMock.GetLoose();
 			scoresManager = mockery.Mock<BC.IScoresManager>();
+			scoresManager.Setup(it => it.GetScores()).Returns(() => TestScores);
 
 			controller = mockery.Create<ScoresController>();
+
+			SetupTestScores();
 		}
 
+		private void SetupTestScores()
+		{
+			TestScores = new List<BC.Score> {
+				new BC.Score { Id = 1, Value = 10 },
+				new BC.Score { Id = 2, Value = 7 },
+				new BC.Score { Id = 3, Value = 4 }
+			};
+		}
+
+		private List<BC.Score> TestScores;
 		private ScoresController controller;
 		private Mock<BC.IScoresManager> scoresManager;
 

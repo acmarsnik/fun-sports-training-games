@@ -18,20 +18,7 @@ namespace FstgWebApi.Controllers
     {
         public IActionResult Get()
         {
-            var response = new List<Score>
-            {
-                new Score { id = 1, score = 10 },
-                new Score { id = 2, score = 7 },
-                new Score { id = 3, score = 4 },
-                new Score { id = 4, score = 8 },
-                new Score { id = 5, score = 7 },
-                new Score { id = 6, score = 6 },
-                new Score { id = 7, score = 5 },
-                new Score { id = 8, score = 3 },
-                new Score { id = 9, score = 10 },
-                new Score { id = 10, score = 9 }
-            };
-
+            var response = new List<Score>();
 			var scores = scoreManager.GetScores();
 			foreach (var score in scores)
 			{
