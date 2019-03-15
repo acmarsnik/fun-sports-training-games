@@ -1,4 +1,5 @@
-﻿using MongoDB.Bson.Serialization.Attributes;
+﻿using BusinessContracts;
+using MongoDB.Bson.Serialization.Attributes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace FstgWebApi.Models
 {
-    public class Score
+    public class Score : Score
     {
         //[BsonId]
-        public int id { get; set; }
+        public int Id { get; set; }
         //[BsonElement]
-        public int score { get; set; }
+        public int Value { get; set; }
 
     }
 }

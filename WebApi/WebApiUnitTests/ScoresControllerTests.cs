@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using Autofac.Extras.Moq;
-using BC = BusinessContracts;
+using FstgWebApi.DataModels;
+using FstgWebApi.BusinessContracts;
 using FstgWebApi.Controllers;
-using FstgWebApi.Models;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
 
@@ -41,7 +41,7 @@ namespace WebApiUnitTests
 		{
 			var expected = 4;
 
-			var actual = GetOjectResult<List<Score>>(controller.Get()).Last().score;
+			var actual = GetOjectResult<List<Score>>(controller.Get()).Last().Value;
 
 			Assert.AreEqual(expected, actual);
 		}
@@ -64,7 +64,7 @@ namespace WebApiUnitTests
 			
 
 			var mockery = AutoMock.GetLoose();
-			scoresManager = mockery.Mock<BC.IScoresManager>();
+			scoresManager = mockery.Mock<IScoresManager>();
 			scoresManager.Setup(it => it.GetScores()).Returns(() => TestScores);
 
 			controller = mockery.Create<ScoresController>();
@@ -74,16 +74,16 @@ namespace WebApiUnitTests
 
 		private void SetupTestScores()
 		{
-			TestScores = new List<BC.Score> {
-				new BC.Score { Id = 1, Value = 10 },
-				new BC.Score { Id = 2, Value = 7 },
-				new BC.Score { Id = 3, Value = 4 }
+			TestScores = new List<Score> {
+				new Score { Id = 1, Value = 10 },
+				new Score { Id = 2, Value = 7 },
+				new Score { Id = 3, Value = 4 }
 			};
 		}
 
-		private List<BC.Score> TestScores;
+		private List<Score> TestScores;
 		private ScoresController controller;
-		private Mock<BC.IScoresManager> scoresManager;
+		private Mock<IScoresManager> scoresManager;
 
 	}
 

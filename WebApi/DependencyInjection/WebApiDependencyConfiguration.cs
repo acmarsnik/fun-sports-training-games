@@ -1,7 +1,7 @@
 ﻿using Autofac;
 using Autofac.Extensions.DependencyInjection;
-using BusinessContracts;
-using BusinessLogic;
+using FstgWebApi.BusinessContracts;
+using FstgWebApi.BusinessLogic;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;

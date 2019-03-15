@@ -4,4 +4,11 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\DataContracts\DataContracts.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Models\NewScore.cs" />
+    <Compile Remove="Models\Score.cs" />
+  </ItemGroup>
 </Project>

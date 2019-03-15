@@ -4,8 +4,8 @@ using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
-using BC = BusinessContracts;
-using FstgWebApi.Models;
+using FstgWebApi.BusinessContracts;
+using FstgWebApi.DataModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -24,8 +24,9 @@ namespace FstgWebApi.Controllers
 			{
 				response.Add(
 					new Score {
-						id = score.Id,
-						score = score.Value
+						Id = score.Id,
+                        UserId = score.UserId,
+						Value = score.Value
 					});
 			}
 
@@ -35,20 +36,20 @@ namespace FstgWebApi.Controllers
 
         // PUT api/values/5
         [HttpPut]
-        public IActionResult Put([FromBody]NewScore newScore)
+        public IActionResult Put([FromBody]Score score)
         {
-            Debug.Write($"Score: {newScore.Score}, UserId: {newScore.UserId}");
+            Debug.Write($"Id: {score.Id}, UserId: {score.UserId}, Score: {score.Value}");
             var response = new { status = "Created" };
             var output = StatusCode((int)HttpStatusCode.Created, response);
             return output;
         }
 
 
-		public ScoresController(BC.IScoresManager scoreManager)
+		public ScoresController(IScoresManager scoreManager)
 		{
 			this.scoreManager = scoreManager;
 		}
 
-		private readonly BC.IScoresManager scoreManager;
+		private readonly IScoresManager scoreManager;
 	}
 }

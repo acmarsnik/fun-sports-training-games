@@ -15,6 +15,7 @@
   <ItemGroup>
     <ProjectReference Include="..\BusinessContracts\BusinessContracts.csproj" />
     <ProjectReference Include="..\FstgWebApi\FstgWebApi.csproj" />
+    <ProjectReference Include="..\DataModels\DataModels.csproj" />
   </ItemGroup>
 
 </Project>

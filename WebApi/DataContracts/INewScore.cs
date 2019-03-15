@@ -4,7 +4,7 @@ namespace DataContracts
 {
     interface IScore
     {
-        int Id { get; set; };
-        int Value { get; set; };
+        int UserId { get; set; }
+        int Score { get; set; }
     }
 }

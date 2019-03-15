@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DataAccess
+namespace FstgWebApi.DataAccess
 {
     public class Class1
     {

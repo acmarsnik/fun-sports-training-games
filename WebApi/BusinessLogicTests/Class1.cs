@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BusinessLogicTests
+namespace FstgWebApi.BusinessLogicTests
 {
     public class Class1
     {

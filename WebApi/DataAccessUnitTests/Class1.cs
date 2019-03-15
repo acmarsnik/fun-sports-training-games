@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DataAccessUnitTests
+namespace FstgWebApi.DataAccessUnitTests
 {
     public class Class1
     {

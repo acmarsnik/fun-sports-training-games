@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using FstgWebApi.DataContracts;
 
-namespace BusinessContracts
+namespace FstgWebApi.BusinessContracts
 {
 	public interface IScoresManager
 	{
-		IEnumerable<Score> GetScores();
+		IEnumerable<IScore> GetScores();
 	}
 }

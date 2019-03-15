@@ -1,8 +1,12 @@
 ﻿using System;
+using FstgWebApi.DataContracts;
 
-namespace DataModels
+namespace FstgWebApi.DataModels
 {
-    public class Class1
+    public class Score: IScore
     {
+        public int Id { get; set; }
+        public int UserId { get; set; }
+        public int Value { get; set; }
     }
 }

@@ -1,8 +1,11 @@
 ﻿using System;
 
-namespace DataContracts
+namespace FstgWebApi.DataContracts
 {
-    public class Class1
+    public interface IScore
     {
+        int Id { get; set; }
+        int UserId { get; set; }
+        int Value { get; set; }
     }
 }

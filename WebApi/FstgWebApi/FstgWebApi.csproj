@@ -35,6 +35,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DependencyInjection\DependencyInjection.csproj" />
+    <ProjectReference Include="..\DataContracts\DataContracts.csproj" />
+    <ProjectReference Include="..\DataModels\DataModels.csproj" />
   </ItemGroup>
 
 </Project>
