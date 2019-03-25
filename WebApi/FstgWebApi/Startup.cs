@@ -49,7 +49,7 @@ namespace FstgWebApi
 
             app.UseMvc();
 
-            applicationLifetime.ApplicationStopped.Register(() => ApplicationContainer.Dispose());
+            applicationLifetime.ApplicationStopped.Register(ApplicationContainer.Dispose);
         }
     }
 }

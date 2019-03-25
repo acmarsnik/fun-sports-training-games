@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using Autofac.Core;
 using Autofac.Extensions.DependencyInjection;
 using FstgWebApi.BusinessContracts;
 using FstgWebApi.BusinessLogic;
@@ -20,10 +21,10 @@ namespace FstgWebApi.DependencyInjection
 			//builder.RegisterType<PumpStatusConverter>().As<IPumpStatusConverter>().InstancePerLifetimeScope();
 
 			//builder.RegisterType<AgDataWarehouseOdbcContext>().WithParameter(
-			//	new ResolvedParameter(
-			//		(pi, ctx) => pi.ParameterType == typeof(IConnectionFactory),
-			//		(pi, ctx) => ctx.ResolveKeyed<IConnectionFactory>("odbc-agdatawarehouse")))
-			//	.As<IOdbcDbContext>().Keyed<IOdbcDbContext>("odbc-agdatawarehouse");
+				//new ResolvedParameter(
+				//	(pi, ctx) => pi.ParameterType == typeof(IConnectionFactory),
+				//	(pi, ctx) => ctx.ResolveKeyed<IConnectionFactory>("odbc-agdatawarehouse")))
+				//.As<IOdbcDbContext>().Keyed<IOdbcDbContext>("odbc-agdatawarehouse");
 
 
 			builder.RegisterType<ScoresManager>().As<IScoresManager>().InstancePerLifetimeScope();
@@ -31,5 +32,5 @@ namespace FstgWebApi.DependencyInjection
 			builder.Populate(services);
 			return builder.Build();
 		}
-	}
+    }
 }
