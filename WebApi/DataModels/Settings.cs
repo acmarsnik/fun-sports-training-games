@@ -3,10 +3,9 @@ using FstgWebApi.DataContracts;
 
 namespace FstgWebApi.DataModels
 {
-    public class Score: IScore
+    public class Settings: ISettings
     {
-        public int Id { get; set; }
-        public int UserId { get; set; }
-        public int Value { get; set; }
+        public string ConnectionString { get; set; }
+        public string Database { get; set; }
     }
 }

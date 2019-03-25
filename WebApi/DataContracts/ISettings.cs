@@ -2,10 +2,9 @@
 
 namespace FstgWebApi.DataContracts
 {
-    public interface IScore
+    public interface ISettings
     {
-        int Id { get; set; }
-        int UserId { get; set; }
-        int Value { get; set; }
+        string ConnectionString { get; set; }
+        string Database { get; set; }
     }
 }

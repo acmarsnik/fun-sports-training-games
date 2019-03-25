@@ -5,7 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="IScore %28copy%29.cs" />
     <Compile Remove="IScore1.cs" />
   </ItemGroup>
 </Project>
