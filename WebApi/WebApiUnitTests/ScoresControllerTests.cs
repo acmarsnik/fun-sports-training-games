@@ -10,6 +10,8 @@ using Microsoft.AspNetCore.Mvc;
 using Moq;
 
 using NUnit.Framework;
+using System.Threading.Tasks;
+using FstgWebApi.DataContracts;
 
 namespace WebApiUnitTests
 {
@@ -17,40 +19,40 @@ namespace WebApiUnitTests
     public class ScoresControllerTests
     {
 		[Test]
-		public void Get_Returns_Ok()
+		public async Task Get_Returns_OkAsync()
 		{
 			var expected = HttpStatusCode.OK;
 
-			var actual = ((ObjectResult)controller.Get()).StatusCode;
+			var actual = ((ObjectResult) await controller.GetAsync()).StatusCode;
 
 			Assert.AreEqual(expected, (HttpStatusCode)actual);
 		}
 
 		[Test]
-		public void Get_Returns_10_Values()
+		public async Task Get_Returns_10_ValuesAsync()
 		{
 			var expected = 3;
 
-			var actual = GetOjectResult<List<Score>>(controller.Get()).Count;
+			var actual = GetOjectResult<List<IScore>>(await controller.GetAsync()).Count;
 
 			Assert.AreEqual(expected, actual);
 		}
 
 		[Test]
-		public void Get_Returns_Expected_Score_For_TheLast_Item()
+		public async Task Get_Returns_Expected_Score_For_TheLast_ItemAsync()
 		{
 			var expected = 4;
 
-			var actual = GetOjectResult<List<Score>>(controller.Get()).Last().Value;
+			var actual = GetOjectResult<List<IScore>>(await controller.GetAsync()).Last().Value;
 
 			Assert.AreEqual(expected, actual);
 		}
 
 		[Test]
-		public void Get_Returns_Scores_From_ScoresManager()
+		public async Task Get_Returns_Scores_From_ScoresManagerAsync()
 		{
-			controller.Get();
-			scoresManager.Verify(it => it.GetScores());
+            await controller.GetAsync();
+			scoresManager.Verify(it => it.GetScoresAsync());
 		}
 
 		private T GetOjectResult<T>(IActionResult result)
@@ -65,7 +67,7 @@ namespace WebApiUnitTests
 
 			var mockery = AutoMock.GetLoose();
 			scoresManager = mockery.Mock<IScoresManager>();
-			scoresManager.Setup(it => it.GetScores()).Returns(() => TestScores);
+			scoresManager.Setup(it => it.GetScoresAsync().Result).Returns(() => TestScores);
 
 			controller = mockery.Create<ScoresController>();
 
@@ -74,14 +76,14 @@ namespace WebApiUnitTests
 
 		private void SetupTestScores()
 		{
-			TestScores = new List<Score> {
-				new Score { Id = 1, Value = 10 },
-				new Score { Id = 2, Value = 7 },
-				new Score { Id = 3, Value = 4 }
+			TestScores = new List<IScore> {
+				new Score { _id = 1, Value = 10 },
+				new Score { _id = 2, Value = 7 },
+				new Score { _id = 3, Value = 4 }
 			};
 		}
 
-		private List<Score> TestScores;
+		private List<IScore> TestScores;
 		private ScoresController controller;
 		private Mock<IScoresManager> scoresManager;
 

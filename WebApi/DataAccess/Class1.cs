@@ -1,5 +1,6 @@
 ﻿using System;
 using FstgWebApi.DataModels;
+using Microsoft.Extensions.Options;
 using MongoDB.Driver;
 
 namespace FstgWebApi.DataAccess
@@ -19,7 +20,7 @@ namespace FstgWebApi.DataAccess
         {
             get
             {
-                return _database.GetCollection<Score>("Games");
+                return _database.GetCollection<Score>("scores");
             }
         }
     }

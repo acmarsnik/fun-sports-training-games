@@ -3,7 +3,10 @@ using Autofac.Core;
 using Autofac.Extensions.DependencyInjection;
 using FstgWebApi.BusinessContracts;
 using FstgWebApi.BusinessLogic;
+using FstgWebApi.DataContracts;
+using FstgWebApi.DataModels;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -17,19 +20,25 @@ namespace FstgWebApi.DependencyInjection
 		{
 			var builder = new ContainerBuilder();
 
-			//builder.RegisterType<OdbcAgDataWarehouseConnectionStringProvider>().As<IConnectionStringProvider>().AsSelf();
-			//builder.RegisterType<PumpStatusConverter>().As<IPumpStatusConverter>().InstancePerLifetimeScope();
+            //builder.RegisterType<OdbcAgDataWarehouseConnectionStringProvider>().As<IConnectionStringProvider>().AsSelf();
+            //builder.RegisterType<PumpStatusConverter>().As<IPumpStatusConverter>().InstancePerLifetimeScope();
 
-			//builder.RegisterType<AgDataWarehouseOdbcContext>().WithParameter(
-				//new ResolvedParameter(
-				//	(pi, ctx) => pi.ParameterType == typeof(IConnectionFactory),
-				//	(pi, ctx) => ctx.ResolveKeyed<IConnectionFactory>("odbc-agdatawarehouse")))
-				//.As<IOdbcDbContext>().Keyed<IOdbcDbContext>("odbc-agdatawarehouse");
+            //builder.RegisterType<AgDataWarehouseOdbcContext>().WithParameter(
+            //new ResolvedParameter(
+            //	(pi, ctx) => pi.ParameterType == typeof(IConnectionFactory),
+            //	(pi, ctx) => ctx.ResolveKeyed<IConnectionFactory>("odbc-agdatawarehouse")))
+            //.As<IOdbcDbContext>().Keyed<IOdbcDbContext>("odbc-agdatawarehouse");
 
+            //(options =>
+            //{
+            //    options.ConnectionString
+            //        = Configuration.GetSection("MongoConnection:ConnectionString").Value;
+            //    options.Database
+            //        = Configuration.GetSection("MongoConnection:Database").Value;
+            //});
+            builder.RegisterType<ScoresManager>().As<IScoresManager>().InstancePerLifetimeScope();
 
-			builder.RegisterType<ScoresManager>().As<IScoresManager>().InstancePerLifetimeScope();
-
-			builder.Populate(services);
+            builder.Populate(services);
 			return builder.Build();
 		}
     }

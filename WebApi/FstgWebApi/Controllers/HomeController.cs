@@ -49,7 +49,7 @@ namespace FstgWebApi.Controllers
             {
                 throw ex;
             }
-            var output = StatusCode((int)HttpStatusCode.OK, "Inserted");
+            var output = StatusCode((int)HttpStatusCode.Created, "Inserted");
             return output;
         }
 

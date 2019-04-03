@@ -5,7 +5,7 @@ namespace FstgWebApi.DataModels
 {
     public class Score: IScore
     {
-        public int Id { get; set; }
+        public int _id { get; set; }
         public int UserId { get; set; }
         public int Value { get; set; }
     }

@@ -1,32 +1,51 @@
 ﻿using FstgWebApi.BusinessContracts;
+using FstgWebApi.DataAccess;
 using FstgWebApi.DataContracts;
 using FstgWebApi.DataModels;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
+using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace FstgWebApi.BusinessLogic
 {
 	public class ScoresManager : IScoresManager
 	{
-		public IEnumerable<IScore> GetScores()
+        private readonly FstgContext _context;
+
+        public ScoresManager(IOptions<Settings> settings)
+        {
+            _context = new FstgContext(settings);
+        }
+
+        public async Task<IEnumerable<IScore>> GetScoresAsync()
 		{
-			//TODO: fetch this data from the data access layer
+            //TODO: fetch this data from the data access layer
+            try
+            {
+                return await _context.Scores.Find(_ => true).ToListAsync();
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+        }
 
-			var results = new List<IScore>
-			{
-				new Score { Id = 1, UserId = 1, Value = 10 },
-				new Score { Id = 2, UserId = 1, Value = 7 },
-				new Score { Id = 3, UserId = 1, Value = 4 },
-				new Score { Id = 4, UserId = 1, Value = 8 },
-				new Score { Id = 5, UserId = 1, Value = 7 },
-				new Score { Id = 6, UserId = 1, Value = 6 },
-				new Score { Id = 7, UserId = 1, Value = 5 },
-				new Score { Id = 8, UserId = 1, Value = 3 },
-				new Score { Id = 9, UserId = 1, Value = 10 },
-				new Score { Id = 10, UserId = 1, Value = 9 }
-			};
+        public async Task<IScore> InsertScoreAsync(IScore score)
+        {
+            //TODO: fetch this data from the data access layer
+            try
+            {
+                await _context.Scores.InsertOneAsync((Score)score);
+                return score;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
 
-			return results;
-		}
-	}
+        }
+    }
 }
