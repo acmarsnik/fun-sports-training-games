@@ -17,12 +17,16 @@ namespace FstgWebApi.Controllers
         private IMongoDatabase mongoDatabase;
 
         //Generic method to get the mongodb database details  
-        public IMongoDatabase GetMongoDatabase()
+        private IMongoDatabase GetMongoDatabase()
         {
             var mongoClient = new MongoClient("mongodb://localhost:27017");
             return mongoClient.GetDatabase("fstg");
         }
 
+        /// <summary>
+        /// Gets All Scores from Db
+        /// </summary>
+        /// <returns>IActionResult</returns>
         [HttpGet]
         public IActionResult Index()
         {
@@ -34,6 +38,12 @@ namespace FstgWebApi.Controllers
             return output;
         }
 
+
+        /// <summary>
+        /// Adds a score
+        /// </summary>
+        /// <param name="score">A score object containing: userId, value </param>
+        /// <returns>IActionResult</returns>
         [HttpPost]
         [Produces("application/json")]
         [Route("api/Add/Score")]

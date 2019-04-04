@@ -4,6 +4,16 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\netcoreapp2.1\FstgWebApi.xml</DocumentationFile>
+    <OutputPath>bin\netcoreapp2.1\</OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>bin\Debug\netcoreapp2.1\FstgWebApi.xml</DocumentationFile>
+    <OutputPath>bin\Debug\netcoreapp2.1\</OutputPath>
+  </PropertyGroup>
+
   <ItemGroup>
     <Compile Remove="NewFolder1\**" />
     <Content Remove="NewFolder1\**" />

@@ -6,9 +6,15 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FstgWebApi.Controllers
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [Route("api/[controller]")]
     public class ValuesController : Controller
     {
+        /// <summary>
+        /// 
+        /// </summary>
         // GET api/values
         [HttpGet]
         public IEnumerable<string> Get()
@@ -16,6 +22,9 @@ namespace FstgWebApi.Controllers
             return new string[] { "value1", "value2" };
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         // GET api/values/5
         [HttpGet("{id}")]
         public string Get(int id)
@@ -23,18 +32,27 @@ namespace FstgWebApi.Controllers
             return "value";
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         // POST api/values
         [HttpPost]
         public void Post([FromBody]string value)
         {
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         // PUT api/values/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody]string value)
         {
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         // DELETE api/values/5
         [HttpDelete("{id}")]
         public void Delete(int id)

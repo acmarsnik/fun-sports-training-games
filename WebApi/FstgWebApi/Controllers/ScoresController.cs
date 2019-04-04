@@ -12,11 +12,18 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FstgWebApi.Controllers
 {
+    /// <summary>
+    /// ScoresController
+    /// </summary>
     [ApiController]
     [Produces("application/json")]
     [Route("api/[controller]")]
     public class ScoresController : Controller
     {
+        /// <summary>
+        /// ScoresController Constructor
+        /// </summary>
+        /// <param name="scoreManager">IScoresManager </param>
         public ScoresController(IScoresManager scoreManager)
         {
             this.scoreManager = scoreManager;
@@ -24,6 +31,11 @@ namespace FstgWebApi.Controllers
 
         private readonly IScoresManager scoreManager;
 
+        /// <summary>
+        /// Gets all scores
+        /// </summary>
+        /// <returns>IActionResult</returns>
+        [HttpGet]
         public async Task<IActionResult> GetAsync()
         {
             var response = new List<Score>();
@@ -44,15 +56,21 @@ namespace FstgWebApi.Controllers
         }
 
         // PUT api/values/5
-        [HttpPut]
-        public IActionResult Put([FromBody]Score score)
-        {
-            Debug.Write($"UserId: {score.UserId}, Score: {score.Value}");
-            var response = new { status = "Created" };
-            var output = StatusCode((int)HttpStatusCode.Created, response);
-            return output;
-        }
 
+        //public IActionResult Put([FromBody]Score score)
+        //{
+        //    Debug.Write($"UserId: {score.UserId}, Score: {score.Value}");
+        //    var response = new { status = "Created" };
+        //    var output = StatusCode((int)HttpStatusCode.Created, response);
+        //    return output;
+        //}
+
+        /// <summary>
+        /// Adds a score
+        /// </summary>
+        /// <param name="score">A score object containing: userId, value </param>
+        /// <returns>IActionResult</returns>
+        [HttpPut]
         [HttpPost]
         [Produces("application/json")]
         public async Task<IActionResult> CreateAsync([FromBody]Score score)
