@@ -34,7 +34,6 @@ namespace FstgWebApi.Controllers
 			{
 				response.Add(
 					new Score {
-						_id = score._id,
                         UserId = score.UserId,
 						Value = score.Value
 					});
@@ -48,7 +47,7 @@ namespace FstgWebApi.Controllers
         [HttpPut]
         public IActionResult Put([FromBody]Score score)
         {
-            Debug.Write($"Id: {score._id}, UserId: {score.UserId}, Score: {score.Value}");
+            Debug.Write($"UserId: {score.UserId}, Score: {score.Value}");
             var response = new { status = "Created" };
             var output = StatusCode((int)HttpStatusCode.Created, response);
             return output;
@@ -56,12 +55,12 @@ namespace FstgWebApi.Controllers
 
         [HttpPost]
         [Produces("application/json")]
-        public IActionResult Create(IScore score)
+        public async Task<IActionResult> CreateAsync([FromBody]Score score)
         {
             IScore insertedScore = null;
             try
             {
-                insertedScore = (IScore)scoreManager.InsertScoreAsync(score);
+                insertedScore = (IScore)await scoreManager.InsertScoreAsync(score);
             }
             catch (Exception ex)
             {

@@ -77,9 +77,9 @@ namespace WebApiUnitTests
 		private void SetupTestScores()
 		{
 			TestScores = new List<IScore> {
-				new Score { _id = 1, Value = 10 },
-				new Score { _id = 2, Value = 7 },
-				new Score { _id = 3, Value = 4 }
+				new Score { UserId = 1, Value = 10 },
+				new Score { UserId = 2, Value = 7 },
+				new Score { UserId = 3, Value = 4 }
 			};
 		}
 
