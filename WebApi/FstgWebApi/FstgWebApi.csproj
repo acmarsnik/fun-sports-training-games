@@ -10,8 +10,8 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>bin\Debug\netcoreapp2.1\FstgWebApi.xml</DocumentationFile>
-    <OutputPath>bin\Debug\netcoreapp2.1\</OutputPath>
+    <DocumentationFile>FstgWebApi.xml</DocumentationFile>
+    <OutputPath></OutputPath>
   </PropertyGroup>
 
   <ItemGroup>

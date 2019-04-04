@@ -89,7 +89,15 @@ namespace FstgWebApi
             // specifying the Swagger JSON endpoint.
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Fun Sports Training Games API V1");
+                if (env.IsDevelopment())
+                {
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Fun Sports Training Games API V1");
+                }
+                else
+                {
+                    c.SwaggerEndpoint("/api/swagger/v1/swagger.json", "Fun Sports Training Games API V1");
+                }
+                
                 //c.RoutePrefix = string.Empty;
             });
 

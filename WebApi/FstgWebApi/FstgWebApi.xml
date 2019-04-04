@@ -1,0 +1,125 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FstgWebApi</name>
+    </assembly>
+    <members>
+        <member name="T:FstgWebApi.Controllers.HomeController">
+            <summary>
+            Home Controller
+            </summary>
+        </member>
+        <member name="M:FstgWebApi.Controllers.HomeController.Index">
+            <summary>
+            Gets All Scores from Db
+            </summary>
+            <returns>IActionResult</returns>
+        </member>
+        <member name="M:FstgWebApi.Controllers.HomeController.Create(FstgWebApi.DataModels.Score)">
+            <summary>
+            Adds a score
+            </summary>
+            <param name="score">A score object containing: userId, value </param>
+            <returns>IActionResult</returns>
+        </member>
+        <member name="T:FstgWebApi.Controllers.ScoresController">
+            <summary>
+            ScoresController
+            </summary>
+        </member>
+        <member name="M:FstgWebApi.Controllers.ScoresController.#ctor(FstgWebApi.BusinessContracts.IScoresManager)">
+            <summary>
+            ScoresController Constructor
+            </summary>
+            <param name="scoreManager">IScoresManager </param>
+        </member>
+        <member name="M:FstgWebApi.Controllers.ScoresController.GetAsync">
+            <summary>
+            Gets all scores
+            </summary>
+            <returns>IActionResult</returns>
+        </member>
+        <member name="M:FstgWebApi.Controllers.ScoresController.CreateAsync(FstgWebApi.DataModels.Score)">
+            <summary>
+            Adds a score
+            </summary>
+            <param name="score">A score object containing: userId, value </param>
+            <returns>IActionResult</returns>
+        </member>
+        <member name="T:FstgWebApi.Controllers.ValuesController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:FstgWebApi.Controllers.ValuesController.Get">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:FstgWebApi.Controllers.ValuesController.Get(System.Int32)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:FstgWebApi.Controllers.ValuesController.Post(System.String)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:FstgWebApi.Controllers.ValuesController.Put(System.Int32,System.String)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:FstgWebApi.Controllers.ValuesController.Delete(System.Int32)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:FstgWebApi.Program">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:FstgWebApi.Program.Main(System.String[])">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:FstgWebApi.Program.BuildWebHost(System.String[])">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:FstgWebApi.Startup">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:FstgWebApi.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:FstgWebApi.Startup.Configuration">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:FstgWebApi.Startup.ApplicationContainer">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:FstgWebApi.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method gets called by the runtime. Use this method to add services to the container.
+            </summary>
+        </member>
+        <member name="M:FstgWebApi.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment,Microsoft.AspNetCore.Hosting.IApplicationLifetime)">
+            <summary>
+            This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            </summary>
+        </member>
+    </members>
+</doc>
