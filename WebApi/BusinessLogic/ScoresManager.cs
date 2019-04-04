@@ -2,7 +2,6 @@
 using FstgWebApi.DataAccess;
 using FstgWebApi.DataContracts;
 using FstgWebApi.DataModels;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
 using System;

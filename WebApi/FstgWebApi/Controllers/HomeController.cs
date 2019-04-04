@@ -10,6 +10,9 @@ using MongoDB.Driver;
 
 namespace FstgWebApi.Controllers
 {
+    /// <summary>
+    /// Home Controller
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class HomeController : ControllerBase
