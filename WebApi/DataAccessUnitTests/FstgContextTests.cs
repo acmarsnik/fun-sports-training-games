@@ -2,7 +2,7 @@
 
 namespace FstgWebApi.DataAccessUnitTests
 {
-    public class Class1
+    public class FstgContextTests
     {
     }
 }

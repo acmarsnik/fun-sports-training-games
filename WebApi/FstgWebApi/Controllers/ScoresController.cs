@@ -46,6 +46,7 @@ namespace FstgWebApi.Controllers
 			{
 				response.Add(
 					new Score {
+                        _id = score._id,
                         UserId = score.UserId,
 						Value = score.Value
 					});

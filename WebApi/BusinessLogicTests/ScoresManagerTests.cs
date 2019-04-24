@@ -2,7 +2,7 @@
 
 namespace FstgWebApi.BusinessLogicTests
 {
-    public class Class1
+    public class ScoresManagerTests
     {
     }
 }

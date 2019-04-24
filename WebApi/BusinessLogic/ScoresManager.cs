@@ -24,7 +24,8 @@ namespace FstgWebApi.BusinessLogic
             //TODO: fetch this data from the data access layer
             try
             {
-                return await _context.Scores.Find(_ => true).ToListAsync();
+                var allScores = await _context.Scores.Find(_ => true).ToListAsync();
+                return allScores;
             }
             catch(Exception ex)
             {
