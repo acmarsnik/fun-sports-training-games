@@ -5,9 +5,8 @@ using FstgWebApi.DataContracts;
 
 namespace FstgWebApi.BusinessContracts
 {
-    public interface IScoresManager
+    public interface IUserScoresManager
     {
-        Task<IEnumerable<IScore>> GetScoresAsync();
-        Task<IScore> InsertScoreAsync(IScore score);
+        Task<IEnumerable<IScore>> GetScoresByUserIdAsync(int userId);
     }
 }

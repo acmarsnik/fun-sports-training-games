@@ -39,20 +39,21 @@ namespace FstgWebApi.Controllers
         public async Task<IActionResult> GetAsync()
         {
             var response = new List<Score>();
-			IEnumerable<IScore> iEnumerableScores = await scoreManager.GetScoresAsync();
+            IEnumerable<IScore> iEnumerableScores = await scoreManager.GetScoresAsync();
             List<IScore> scores = iEnumerableScores.ToList<IScore>();
 
             foreach (var score in scores)
-			{
-				response.Add(
-					new Score {
+            {
+                response.Add(
+                    new Score
+                    {
                         _id = score._id,
                         UserId = score.UserId,
-						Value = score.Value
-					});
-			}
+                        Value = score.Value
+                    });
+            }
 
-			var output = StatusCode((int)HttpStatusCode.OK, response);
+            var output = StatusCode((int)HttpStatusCode.OK, response);
             return output;
         }
 
@@ -88,5 +89,5 @@ namespace FstgWebApi.Controllers
             var output = StatusCode((int)HttpStatusCode.Created, insertedScore);
             return output;
         }
-	}
+    }
 }

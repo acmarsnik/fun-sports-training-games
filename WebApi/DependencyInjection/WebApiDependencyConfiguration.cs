@@ -14,11 +14,11 @@ using System.Text.RegularExpressions;
 
 namespace FstgWebApi.DependencyInjection
 {
-	public class WebApiDependencyConfiguration
+    public class WebApiDependencyConfiguration
     {
-		public static IContainer Configure(IServiceCollection services)
-		{
-			var builder = new ContainerBuilder();
+        public static IContainer Configure(IServiceCollection services)
+        {
+            var builder = new ContainerBuilder();
 
             //builder.RegisterType<OdbcAgDataWarehouseConnectionStringProvider>().As<IConnectionStringProvider>().AsSelf();
             //builder.RegisterType<PumpStatusConverter>().As<IPumpStatusConverter>().InstancePerLifetimeScope();
@@ -37,9 +37,10 @@ namespace FstgWebApi.DependencyInjection
             //        = Configuration.GetSection("MongoConnection:Database").Value;
             //});
             builder.RegisterType<ScoresManager>().As<IScoresManager>().InstancePerLifetimeScope();
+            builder.RegisterType<UserScoresManager>().As<IUserScoresManager>().InstancePerLifetimeScope();
 
             builder.Populate(services);
-			return builder.Build();
-		}
+            return builder.Build();
+        }
     }
 }

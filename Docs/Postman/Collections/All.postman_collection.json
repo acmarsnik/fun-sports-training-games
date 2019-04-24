@@ -599,129 +599,364 @@
 			"name": "Scores",
 			"item": [
 				{
-					"name": "Score",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "2a7bfcac-feda-4eb4-8101-dfa9b86df770",
-								"exec": [
-									"pm.test(\"Successful request\", function () {",
-									"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);",
-									"});",
-									"",
-									"",
-									"",
-									"if(pm.response.code > 199 && pm.response.code < 203){",
-									"    var jsonData = pm.response.json();",
-									"    ",
-									"    pm.test(\"Response not null\", function () {",
-									"        pm.expect(jsonData).not.eql(null);",
-									"    });",
-									"",
-									"    ",
-									"    pm.test(\"Response not undefined\", function () {",
-									"        pm.expect(jsonData).not.eql(undefined);",
-									"    });",
-									"    ",
-									"    if(jsonData !== null && jsonData !== undefined){",
-									"        ",
-									"        // Additional Tests here",
-									"    }",
-									"    ",
-									"}",
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"type": "text",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"UserId\": 3,\r\n  \"Value\": 6\r\n}"
-						},
-						"url": {
-							"raw": "{{Scores}}",
-							"host": [
-								"{{Scores}}"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Score",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "2a7bfcac-feda-4eb4-8101-dfa9b86df770",
-								"exec": [
-									"pm.test(\"Successful request\", function () {",
-									"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);",
-									"});",
-									"",
-									"",
-									"",
-									"if(pm.response.code > 199 && pm.response.code < 203){",
-									"    var jsonData = pm.response.json();",
-									"    ",
-									"    pm.test(\"Response not null\", function () {",
-									"        pm.expect(jsonData).not.eql(null);",
-									"    });",
-									"",
-									"    ",
-									"    pm.test(\"Response not undefined\", function () {",
-									"        pm.expect(jsonData).not.eql(undefined);",
-									"    });",
-									"    ",
-									"    if(jsonData !== null && jsonData !== undefined){",
-									"        ",
-									"        // Additional Tests here",
-									"    }",
-									"    ",
-									"}",
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"type": "text",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"UserId\": 17,\r\n  \"Value\": 6\r\n}"
-						},
-						"url": {
-							"raw": "{{Scores}}",
-							"host": [
-								"{{Scores}}"
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "Scores",
+					"item": [
+						{
+							"name": "Score",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2a7bfcac-feda-4eb4-8101-dfa9b86df770",
+										"exec": [
+											"pm.test(\"Successful request\", function () {",
+											"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);",
+											"});",
+											"",
+											"",
+											"",
+											"if(pm.response.code > 199 && pm.response.code < 203){",
+											"    var jsonData = pm.response.json();",
+											"    ",
+											"    pm.test(\"Response not null\", function () {",
+											"        pm.expect(jsonData).not.eql(null);",
+											"    });",
+											"",
+											"    ",
+											"    pm.test(\"Response not undefined\", function () {",
+											"        pm.expect(jsonData).not.eql(undefined);",
+											"    });",
+											"    ",
+											"    if(jsonData !== null && jsonData !== undefined){",
+											"        ",
+											"        // Additional Tests here",
+											"    }",
+											"    ",
+											"}",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"UserId\": 3,\r\n  \"Value\": 6\r\n}"
+								},
+								"url": {
+									"raw": "{{Scores}}",
+									"host": [
+										"{{Scores}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Score",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2a7bfcac-feda-4eb4-8101-dfa9b86df770",
+										"exec": [
+											"pm.test(\"Successful request\", function () {",
+											"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);",
+											"});",
+											"",
+											"",
+											"",
+											"if(pm.response.code > 199 && pm.response.code < 203){",
+											"    var jsonData = pm.response.json();",
+											"    ",
+											"    pm.test(\"Response not null\", function () {",
+											"        pm.expect(jsonData).not.eql(null);",
+											"    });",
+											"",
+											"    ",
+											"    pm.test(\"Response not undefined\", function () {",
+											"        pm.expect(jsonData).not.eql(undefined);",
+											"    });",
+											"    ",
+											"    if(jsonData !== null && jsonData !== undefined){",
+											"        ",
+											"        // Additional Tests here",
+											"    }",
+											"    ",
+											"}",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"UserId\": 17,\r\n  \"Value\": 6\r\n}"
+								},
+								"url": {
+									"raw": "{{Scores}}",
+									"host": [
+										"{{Scores}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Scores",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "430dacd8-74f4-4443-9ffe-6d128f2a8144",
+										"exec": [
+											"pm.test(\"Successful request\", function () {",
+											"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);",
+											"});",
+											"",
+											"",
+											"",
+											"if(pm.response.code > 199 && pm.response.code < 203){",
+											"    var jsonData = pm.response.json();",
+											"    ",
+											"    pm.test(\"Response not null\", function () {",
+											"        pm.expect(jsonData).not.eql(null);",
+											"    });",
+											"",
+											"    ",
+											"    pm.test(\"Response not undefined\", function () {",
+											"        pm.expect(jsonData).not.eql(undefined);",
+											"    });",
+											"    ",
+											"    if(jsonData !== null && jsonData !== undefined){",
+											"        ",
+											"        var firstResult = jsonData[0];",
+											"        var firstId = firstResult._id;",
+											"        var isFirstIdNan = isNaN(firstId);",
+											"        var lastResult = jsonData[jsonData.length - 1];",
+											"        var lastId = lastResult._id;",
+											"        var isLastIdNan = isNaN(lastId);",
+											"        var middleResult = jsonData[Math.round(((jsonData.length - 1)/2))];",
+											"        var middleId = middleResult._id;",
+											"        var isMiddleIdNan = isNaN(middleId);",
+											"        ",
+											"        pm.test(\"First Id Is Not A Number: \" + firstId, function () {",
+											"        ",
+											"            pm.expect(isFirstIdNan).to.eql(true);",
+											"        });",
+											"        ",
+											"        if(!isFirstIdNan){",
+											"            var numberFirstId = Number(firstId)",
+											"            ",
+											"            pm.test(\"First Id > 0: \" + numberFirstId, function () {",
+											"                pm.expect(numberFirstId).to.be.above(0);",
+											"            });  ",
+											"        }",
+											"        ",
+											"        pm.test(\"Middle Id Is Not A Number: \" + middleId, function () {",
+											"        ",
+											"            pm.expect(isMiddleIdNan).to.eql(true);",
+											"        });",
+											"        ",
+											"        if(!isMiddleIdNan){",
+											"            var numberMiddleId = Number(middleId);",
+											"            ",
+											"            pm.test(\"Middle Id > 0: \" + numberMiddleId, function () {",
+											"                pm.expect(numberMiddleId).to.be.above(0);",
+											"            });  ",
+											"        }",
+											"        ",
+											"        pm.test(\"Last Id Is Not A Number: \" + lastId, function () {",
+											"        ",
+											"            pm.expect(isLastIdNan).to.eql(true);",
+											"        });",
+											"        ",
+											"        if(!isLastIdNan){",
+											"            var numberLastId = Number(lastId);",
+											"            ",
+											"            pm.test(\"Last Id > 0: \" + numberLastId, function () {",
+											"                pm.expect(numberLastId).to.be.above(0);",
+											"            });  ",
+											"        }",
+											"    }",
+											"    ",
+											"}",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{Scores}}",
+									"host": [
+										"{{Scores}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Scores",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "430dacd8-74f4-4443-9ffe-6d128f2a8144",
+										"exec": [
+											"pm.test(\"Successful request\", function () {",
+											"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);",
+											"});",
+											"",
+											"",
+											"",
+											"if(pm.response.code > 199 && pm.response.code < 203){",
+											"    var jsonData = pm.response.json();",
+											"    ",
+											"    pm.test(\"Response not null\", function () {",
+											"        pm.expect(jsonData).not.eql(null);",
+											"    });",
+											"",
+											"    ",
+											"    pm.test(\"Response not undefined\", function () {",
+											"        pm.expect(jsonData).not.eql(undefined);",
+											"    });",
+											"    ",
+											"    if(jsonData !== null && jsonData !== undefined){",
+											"        ",
+											"        var firstResult = jsonData[0];",
+											"        var firstId = firstResult._id;",
+											"        var isFirstIdNan = isNaN(firstId);",
+											"        var lastResult = jsonData[jsonData.length - 1];",
+											"        var lastId = lastResult._id;",
+											"        var isLastIdNan = isNaN(lastId);",
+											"        var middleResult = jsonData[Math.round(((jsonData.length - 1)/2))];",
+											"        var middleId = middleResult._id;",
+											"        var isMiddleIdNan = isNaN(middleId);",
+											"        ",
+											"        pm.test(\"First Id Is Not A Number: \" + firstId, function () {",
+											"        ",
+											"            pm.expect(isFirstIdNan).to.eql(true);",
+											"        });",
+											"        ",
+											"        if(!isFirstIdNan){",
+											"            var numberFirstId = Number(firstId)",
+											"            ",
+											"            pm.test(\"First Id > 0: \" + numberFirstId, function () {",
+											"                pm.expect(numberFirstId).to.be.above(0);",
+											"            });  ",
+											"        }",
+											"        ",
+											"        pm.test(\"Middle Id Is Not A Number: \" + middleId, function () {",
+											"        ",
+											"            pm.expect(isMiddleIdNan).to.eql(true);",
+											"        });",
+											"        ",
+											"        if(!isMiddleIdNan){",
+											"            var numberMiddleId = Number(middleId);",
+											"            ",
+											"            pm.test(\"Middle Id > 0: \" + numberMiddleId, function () {",
+											"                pm.expect(numberMiddleId).to.be.above(0);",
+											"            });  ",
+											"        }",
+											"        ",
+											"        pm.test(\"Last Id Is Not A Number: \" + lastId, function () {",
+											"        ",
+											"            pm.expect(isLastIdNan).to.eql(true);",
+											"        });",
+											"        ",
+											"        if(!isLastIdNan){",
+											"            var numberLastId = Number(lastId);",
+											"            ",
+											"            pm.test(\"Last Id > 0: \" + numberLastId, function () {",
+											"                pm.expect(numberLastId).to.be.above(0);",
+											"            });  ",
+											"        }",
+											"    }",
+											"    ",
+											"}",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{Scores}}",
+									"host": [
+										"{{Scores}}"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		},
+		{
+			"name": "UserScores",
+			"item": [
+				{
+					"name": "ScoresByUserId",
 					"event": [
 						{
 							"listen": "test",
@@ -748,9 +983,29 @@
 									"    ",
 									"    if(jsonData !== null && jsonData !== undefined){",
 									"        ",
-									"        // Additional Tests here",
+									"        var firstResult = jsonData[0];",
+									"        var firstUserId = firstResult.userId;",
+									"        var lastResult = jsonData[jsonData.length - 1];",
+									"        var lastUserId = lastResult.userId;",
+									"        var middleResult = jsonData[Math.round(((jsonData.length - 1)/2))];",
+									"        var middleUserId = middleResult.userId;",
+									"        ",
+									"        if(jsonData.length > 0){",
+									"            pm.test(\"First User Id is 1: \" + firstUserId, function () {",
+									"                pm.expect(firstUserId).to.eql(1);",
+									"            }); ",
+									"            ",
+									"            pm.test(\"Last User Id is 1: \" + lastUserId, function () {",
+									"                pm.expect(lastUserId).to.eql(1);",
+									"            });",
+									"            ",
+									"            if(jsonData.length > 1){",
+									"                pm.test(\"Middle User Id is 1: \" + middleUserId, function () {",
+									"                    pm.expect(middleUserId).to.eql(1);",
+									"                });",
+									"            }",
+									"        }",
 									"    }",
-									"    ",
 									"}",
 									""
 								],
@@ -758,27 +1013,34 @@
 							}
 						}
 					],
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
 						"method": "GET",
 						"header": [
 							{
-								"key": "Content-Type",
+								"key": "Accept",
 								"name": "Content-Type",
 								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
 								"value": "application/json"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"UserId\": 1,\r\n  \"Value\": 8\r\n}"
+							"raw": ""
 						},
 						"url": {
-							"raw": "{{Scores}}",
+							"raw": "{{UserScores}}?userId=1",
 							"host": [
-								"{{Scores}}"
+								"{{UserScores}}"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "1"
+								}
 							]
 						}
 					},
