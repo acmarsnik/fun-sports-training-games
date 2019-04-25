@@ -37,7 +37,6 @@ namespace FstgWebApi.DependencyInjection
             //        = Configuration.GetSection("MongoConnection:Database").Value;
             //});
             builder.RegisterType<ScoresManager>().As<IScoresManager>().InstancePerLifetimeScope();
-            builder.RegisterType<UserScoresManager>().As<IUserScoresManager>().InstancePerLifetimeScope();
 
             builder.Populate(services);
             return builder.Build();

@@ -3,6 +3,7 @@ using FstgWebApi.DataAccess;
 using FstgWebApi.DataContracts;
 using FstgWebApi.DataModels;
 using Microsoft.Extensions.Options;
+using MongoDB.Bson;
 using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
@@ -19,12 +20,40 @@ namespace FstgWebApi.BusinessLogic
             _context = new FstgContext(settings);
         }
 
+        public async Task<IScore> GetScoreByIdAsync(ObjectId _id)
+        {
+            try
+            {
+                IAsyncCursor<Score> asyncCursorScore = await _context.Scores.FindAsync(score => score._id == _id);
+                Score selectedScore = await asyncCursorScore.FirstOrDefaultAsync();
+                return selectedScore;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async Task<IEnumerable<IScore>> GetScoresByUserIdAsync(int userId)
+        {
+            try
+            {
+                IAsyncCursor<Score> asyncCursorUserScores = await _context.Scores.FindAsync(score => score.UserId == userId);
+                List<Score> userScores = await asyncCursorUserScores.ToListAsync();
+                return userScores;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         public async Task<IEnumerable<IScore>> GetScoresAsync()
         {
             //TODO: fetch this data from the data access layer
             try
             {
-                var allScores = await _context.Scores.Find(_ => true).ToListAsync();
+                IAsyncCursor<Score> asyncCursorAllScores = await _context.Scores.FindAsync(_ => true);
+                List<Score> allScores = await asyncCursorAllScores.ToListAsync();
                 return allScores;
             }
             catch (Exception ex)
@@ -40,6 +69,36 @@ namespace FstgWebApi.BusinessLogic
             {
                 await _context.Scores.InsertOneAsync((Score)score);
                 return score;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+
+        public async Task<DeleteResult> DeleteScoreAsync(ObjectId _id)
+        {
+            //TODO: fetch this data from the data access layer
+            try
+            {
+                DeleteResult deleteResult = await _context.Scores.DeleteOneAsync(Builders<Score>.Filter.Eq("_id", _id));
+                return deleteResult;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+
+        public async Task<DeleteResult> DeleteAllScoresAsync()
+        {
+            //TODO: fetch this data from the data access layer
+            try
+            {
+                DeleteResult deleteResult = await _context.Scores.DeleteManyAsync(Builders<Score>.Filter.Empty);
+                return deleteResult;
             }
             catch (Exception ex)
             {

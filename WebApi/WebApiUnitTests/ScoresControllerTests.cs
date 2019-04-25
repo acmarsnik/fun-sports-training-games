@@ -69,7 +69,7 @@ namespace WebApiUnitTests
 			scoresManager = mockery.Mock<IScoresManager>();
 			scoresManager.Setup(it => it.GetScoresAsync().Result).Returns(() => TestScores);
 
-			controller = mockery.Create<ScoresController>();
+			controller = mockery.Create<ScoreController>();
 
 			SetupTestScores();
 		}
@@ -84,7 +84,7 @@ namespace WebApiUnitTests
 		}
 
 		private List<IScore> TestScores;
-		private ScoresController controller;
+		private ScoreController controller;
 		private Mock<IScoresManager> scoresManager;
 
 	}
