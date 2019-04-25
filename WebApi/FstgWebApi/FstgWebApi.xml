@@ -46,6 +46,23 @@
             <param name="score">A score object containing: userId, value </param>
             <returns>IActionResult</returns>
         </member>
+        <member name="T:FstgWebApi.Controllers.UserScoresController">
+            <summary>
+            ScoresController
+            </summary>
+        </member>
+        <member name="M:FstgWebApi.Controllers.UserScoresController.#ctor(FstgWebApi.BusinessContracts.IUserScoresManager)">
+            <summary>
+            ScoresController Constructor
+            </summary>
+            <param name="userScoreManager">IScoresManager </param>
+        </member>
+        <member name="M:FstgWebApi.Controllers.UserScoresController.GetByUserIdAsync(System.Int32)">
+            <summary>
+            Gets scores by user id
+            </summary>
+            <returns>IActionResult</returns>
+        </member>
         <member name="T:FstgWebApi.Controllers.ValuesController">
             <summary>
             
