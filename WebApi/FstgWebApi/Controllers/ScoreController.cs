@@ -78,15 +78,38 @@ namespace FstgWebApi.Controllers
         /// </summary>
         /// <param name="score">A score object containing: userId, value </param>
         /// <returns>IActionResult</returns>
-        [HttpPut]
         [HttpPost]
         [Produces("application/json")]
-        public async Task<IActionResult> CreateAsync([FromBody]Score score)
+        public async Task<IActionResult> CreateAsync(Score score)
         {
             IScore insertedScore = null;
             try
             {
-                insertedScore = (IScore)await scoreManager.InsertScoreAsync(score);
+                insertedScore = await scoreManager.InsertScoreAsync(score);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            var output = StatusCode((int)HttpStatusCode.Created, insertedScore);
+            return output;
+        }
+
+        /// <summary>
+        /// Updates a score
+        /// </summary>
+        /// <param name="_id">the id of the score </param>
+        /// <param name="score">A score object containing: userId, value </param>
+        /// <returns>IActionResult</returns>
+        [HttpPut]
+        [Produces("application/json")]
+        public async Task<IActionResult> UpdateAsync(string _id, Score score)
+        {
+            IScore insertedScore = null;
+            try
+            {
+                score._id = new ObjectId(_id);
+                insertedScore = await scoreManager.UpdateScoreAsync(score);
             }
             catch (Exception ex)
             {

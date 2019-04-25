@@ -13,6 +13,7 @@ namespace FstgWebApi.BusinessContracts
         Task<IEnumerable<IScore>> GetScoresAsync();
         Task<IEnumerable<IScore>> GetScoresByUserIdAsync(int userId);
         Task<IScore> InsertScoreAsync(IScore score);
+        Task<IScore> UpdateScoreAsync(IScore score);
         Task<DeleteResult> DeleteScoreAsync(ObjectId _id);
         Task<DeleteResult> DeleteAllScoresAsync();
     }

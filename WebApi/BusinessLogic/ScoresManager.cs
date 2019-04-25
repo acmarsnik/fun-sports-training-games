@@ -77,6 +77,26 @@ namespace FstgWebApi.BusinessLogic
 
         }
 
+        public async Task<IScore> UpdateScoreAsync(IScore score)
+        {
+            //TODO: fetch this data from the data access layer
+            try
+            {
+                var filter = Builders<Score>.Filter.Eq("_id", score._id);
+                var update = Builders<Score>.Update
+                                .Set(mongoScore => mongoScore.Value, score.Value)
+                                .Set(mongoScore => mongoScore.UserId, score.UserId);
+                //.CurrentDate(s => s.UpdatedOn);
+                await _context.Scores.UpdateOneAsync(filter, update);
+                return score;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+
         public async Task<DeleteResult> DeleteScoreAsync(ObjectId _id)
         {
             //TODO: fetch this data from the data access layer

@@ -1,8 +1,54 @@
 {
 	"id": "c195417f-9425-490f-88fd-13f5cd560efc",
-	"values": [],
+	"values": [
+		{
+			"key": "PV",
+			"value": "1",
+			"enabled": true
+		},
+		{
+			"key": "uI",
+			"value": "userId",
+			"enabled": true
+		},
+		{
+			"key": "A",
+			"value": "/All",
+			"enabled": true
+		},
+		{
+			"key": "U",
+			"value": "/User",
+			"enabled": true
+		},
+		{
+			"key": "i",
+			"value": "_id",
+			"enabled": true
+		},
+		{
+			"key": "expectedScoresLength",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "PUID",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "P_id",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "scoresIndexToUpdate",
+			"value": "",
+			"enabled": true
+		}
+	],
 	"name": "FSTG Globals",
 	"_postman_variable_scope": "globals",
-	"_postman_exported_at": "2019-04-23T15:31:59.392Z",
-	"_postman_exported_using": "Postman/7.0.7"
+	"_postman_exported_at": "2019-04-25T14:09:45.465Z",
+	"_postman_exported_using": "Postman/7.0.9"
 }
