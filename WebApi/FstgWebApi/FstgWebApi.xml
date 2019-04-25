@@ -11,87 +11,66 @@
         </member>
         <member name="M:FstgWebApi.Controllers.HomeController.Index">
             <summary>
-            Gets All Scores from Db
+            Just returns an Ok Result
             </summary>
             <returns>IActionResult</returns>
         </member>
-        <member name="M:FstgWebApi.Controllers.HomeController.Create(FstgWebApi.DataModels.Score)">
-            <summary>
-            Adds a score
-            </summary>
-            <param name="score">A score object containing: userId, value </param>
-            <returns>IActionResult</returns>
-        </member>
-        <member name="T:FstgWebApi.Controllers.ScoresController">
+        <member name="T:FstgWebApi.Controllers.ScoreController">
             <summary>
             ScoresController
             </summary>
         </member>
-        <member name="M:FstgWebApi.Controllers.ScoresController.#ctor(FstgWebApi.BusinessContracts.IScoresManager)">
+        <member name="M:FstgWebApi.Controllers.ScoreController.#ctor(FstgWebApi.BusinessContracts.IScoresManager)">
             <summary>
             ScoresController Constructor
             </summary>
             <param name="scoreManager">IScoresManager </param>
         </member>
-        <member name="M:FstgWebApi.Controllers.ScoresController.GetAsync">
+        <member name="M:FstgWebApi.Controllers.ScoreController.GetByIdAsync(System.String)">
+            <summary>
+            Gets Score by Id
+            </summary>
+            <returns>IActionResult</returns>
+        </member>
+        <member name="M:FstgWebApi.Controllers.ScoreController.GetByUserIdAsync(System.Int32)">
+            <summary>
+            Gets scores by User Id
+            </summary>
+            <returns>IActionResult</returns>
+        </member>
+        <member name="M:FstgWebApi.Controllers.ScoreController.GetAsync">
             <summary>
             Gets all scores
             </summary>
             <returns>IActionResult</returns>
         </member>
-        <member name="M:FstgWebApi.Controllers.ScoresController.CreateAsync(FstgWebApi.DataModels.Score)">
+        <member name="M:FstgWebApi.Controllers.ScoreController.CreateAsync(FstgWebApi.DataModels.Score)">
             <summary>
             Adds a score
             </summary>
             <param name="score">A score object containing: userId, value </param>
             <returns>IActionResult</returns>
         </member>
-        <member name="T:FstgWebApi.Controllers.UserScoresController">
+        <member name="M:FstgWebApi.Controllers.ScoreController.UpdateAsync(System.String,FstgWebApi.DataModels.Score)">
             <summary>
-            ScoresController
+            Updates a score
             </summary>
-        </member>
-        <member name="M:FstgWebApi.Controllers.UserScoresController.#ctor(FstgWebApi.BusinessContracts.IUserScoresManager)">
-            <summary>
-            ScoresController Constructor
-            </summary>
-            <param name="userScoreManager">IScoresManager </param>
-        </member>
-        <member name="M:FstgWebApi.Controllers.UserScoresController.GetByUserIdAsync(System.Int32)">
-            <summary>
-            Gets scores by user id
-            </summary>
+            <param name="_id">the id of the score </param>
+            <param name="score">A score object containing: userId, value </param>
             <returns>IActionResult</returns>
         </member>
-        <member name="T:FstgWebApi.Controllers.ValuesController">
+        <member name="M:FstgWebApi.Controllers.ScoreController.DeleteAsync(System.String)">
             <summary>
-            
+            Deletes a score
             </summary>
+            <param name="_id">the id of the score </param>
+            <returns>IActionResult</returns>
         </member>
-        <member name="M:FstgWebApi.Controllers.ValuesController.Get">
+        <member name="M:FstgWebApi.Controllers.ScoreController.DeleteAllAsync">
             <summary>
-            
+            Deletes all scores
             </summary>
-        </member>
-        <member name="M:FstgWebApi.Controllers.ValuesController.Get(System.Int32)">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:FstgWebApi.Controllers.ValuesController.Post(System.String)">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:FstgWebApi.Controllers.ValuesController.Put(System.Int32,System.String)">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:FstgWebApi.Controllers.ValuesController.Delete(System.Int32)">
-            <summary>
-            
-            </summary>
+            <returns>IActionResult</returns>
         </member>
         <member name="T:FstgWebApi.Program">
             <summary>
