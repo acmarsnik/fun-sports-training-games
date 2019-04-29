@@ -20,7 +20,7 @@ namespace FstgWebApi.Controllers
     [ApiController]
     [Produces("application/json")]
     [Route("api/[controller]")]
-    public class ScoreController : Controller
+    public class ScoreController : Controller, IScoreController
     {
         /// <summary>
         /// ScoresController Constructor
