@@ -4,6 +4,7 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <RootNamespace>FstgWebApi.DependencyInjection</RootNamespace>
     <AssemblyName>FstgWebApi.DependencyInjection</AssemblyName>
+    <Configurations>Debug;Release;Local;LocIIS;Development;Staging;Production</Configurations>
   </PropertyGroup>
 
   <ItemGroup>
