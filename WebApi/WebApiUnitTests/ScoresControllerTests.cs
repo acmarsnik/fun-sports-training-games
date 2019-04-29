@@ -68,6 +68,7 @@ namespace WebApiUnitTests
             var mockery = AutoMock.GetLoose();
             scoresManager = mockery.Mock<IScoresManager>();
             SetupTestScores();
+            // Throws error: invalid setup on a non-virtual (overridable in vb) member
             //scoresManager.Setup(it => it.GetScoresAsync().Result).Returns(() => TestScores);
             controller = mockery.Create<ScoreController>();
 
