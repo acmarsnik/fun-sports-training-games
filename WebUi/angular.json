@@ -65,6 +65,57 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true
+            },
+            "localiis": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.localiis.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            },
+            "dev": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.dev.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            },
+            "stg": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.local.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
             }
           }
         },
@@ -78,6 +129,15 @@
               "browserTarget": "fun-sports-training-games:build:production"
             },
             "local": {
+              "browserTarget": "fun-sports-training-games:build:local"
+            },
+            "localiis": {
+              "browserTarget": "fun-sports-training-games:build:local"
+            },
+            "dev": {
+              "browserTarget": "fun-sports-training-games:build:local"
+            },
+            "stg": {
               "browserTarget": "fun-sports-training-games:build:local"
             }
           }
@@ -134,6 +194,15 @@
               "devServerTarget": "fun-sports-training-games:serve:production"
             },
             "local": {
+              "devServerTarget": "fun-sports-training-games:serve:local"
+            },
+            "localiis": {
+              "devServerTarget": "fun-sports-training-games:serve:local"
+            },
+            "dev": {
+              "devServerTarget": "fun-sports-training-games:serve:local"
+            },
+            "stg": {
               "devServerTarget": "fun-sports-training-games:serve:local"
             }
           }

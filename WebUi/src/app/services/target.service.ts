@@ -9,14 +9,16 @@ const options = {headers: new HttpHeaders({'Content-Type': 'application/json' })
 })
 export class TargetService {
   target_scores: number[] = [0, 1];
-  scoresUrl = environment.scoresUrl;
+  scoreUrl = environment.scoreUrl;
+  allScoresUrl = this.scoreUrl + "/All";
 
   constructor(private http: HttpClient) { }
 
   addTarget(target_score: number){
     console.log(target_score);
-    const data = {userId: 1, score: target_score};
-    return this.http.put(this.scoresUrl, data, options)
+    console.log(this.scoreUrl);
+    const data = {UserId: 1, Value: target_score};
+    return this.http.post(this.scoreUrl, data, options)
     .pipe();
   }
 
@@ -36,7 +38,7 @@ export class TargetService {
   } */
 
   getTargetScores(): Observable<{ id: number, score: number }[]> {
-    return this.http.get<{ id: number, score: number }[]>(this.scoresUrl)
+    return this.http.get<{ id: number, score: number }[]>(this.allScoresUrl)
     .pipe(
     );
   }
