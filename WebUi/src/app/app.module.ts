@@ -5,8 +5,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { TargetAddComponent } from './baseball/pitching/target-add/target-add.component';
 import { TargetsViewComponent } from './baseball/pitching/targets-view/targets-view.component';
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService } from './services/in-memory-data.service';
 import { EnvironmentComponent } from './environment/environment.component';
 
 @NgModule({
