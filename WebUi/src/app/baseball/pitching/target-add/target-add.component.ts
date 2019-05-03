@@ -13,7 +13,7 @@ export class TargetAddComponent implements OnInit {
   score: number;
   isVisible: boolean = false;
   showHideText: string = 'Show';
-  targetScores: { id: number, score: number}[] = [];
+  targetScores: Score[] = [];
 
   constructor(private fb: FormBuilder, private targetService: TargetService) {
     this.createForm();

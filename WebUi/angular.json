@@ -104,7 +104,7 @@
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.local.ts"
+                  "with": "src/environments/environment.stg.ts"
                 }
               ],
               "optimization": true,
@@ -132,13 +132,13 @@
               "browserTarget": "fun-sports-training-games:build:local"
             },
             "localiis": {
-              "browserTarget": "fun-sports-training-games:build:local"
+              "browserTarget": "fun-sports-training-games:build:localiis"
             },
             "dev": {
-              "browserTarget": "fun-sports-training-games:build:local"
+              "browserTarget": "fun-sports-training-games:build:dev"
             },
             "stg": {
-              "browserTarget": "fun-sports-training-games:build:local"
+              "browserTarget": "fun-sports-training-games:build:stg"
             }
           }
         },
@@ -197,13 +197,13 @@
               "devServerTarget": "fun-sports-training-games:serve:local"
             },
             "localiis": {
-              "devServerTarget": "fun-sports-training-games:serve:local"
+              "devServerTarget": "fun-sports-training-games:serve:localiis"
             },
             "dev": {
-              "devServerTarget": "fun-sports-training-games:serve:local"
+              "devServerTarget": "fun-sports-training-games:serve:dev"
             },
             "stg": {
-              "devServerTarget": "fun-sports-training-games:serve:local"
+              "devServerTarget": "fun-sports-training-games:serve:stg"
             }
           }
         },

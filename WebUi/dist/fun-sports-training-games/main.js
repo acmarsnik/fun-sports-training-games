@@ -342,13 +342,14 @@ var TargetService = /** @class */ (function () {
     function TargetService(http) {
         this.http = http;
         this.target_scores = [0, 1];
-        this.scoresUrl = _environments_environment_local__WEBPACK_IMPORTED_MODULE_2__["environment"].scoresUrl;
+        this.scoreUrl = _environments_environment_local__WEBPACK_IMPORTED_MODULE_2__["environment"].scoreUrl;
+        this.allScoresUrl = this.scoreUrl + "/All";
     }
     TargetService.prototype.addTarget = function (target_score) {
         console.log(target_score);
-        console.log(this.scoresUrl);
-        var data = { userId: 1, score: target_score };
-        return this.http.put(this.scoresUrl, data, options)
+        console.log(this.scoreUrl);
+        var data = { UserId: 1, Value: target_score };
+        return this.http.post(this.scoreUrl, data, options)
             .pipe();
     };
     TargetService.prototype.deleteTarget = function (index) {
@@ -364,7 +365,7 @@ var TargetService = /** @class */ (function () {
       );
     } */
     TargetService.prototype.getTargetScores = function () {
-        return this.http.get(this.scoresUrl)
+        return this.http.get(this.allScoresUrl)
             .pipe();
     };
     TargetService = __decorate([
@@ -390,10 +391,10 @@ var TargetService = /** @class */ (function () {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "environment", function() { return environment; });
-var baseUrl = 'http://localhost:58247/api/';
+var baseUrl = 'http://localhost:58248/api/';
 var environment = {
     production: false,
-    scoresUrl: baseUrl + 'Scores',
+    scoreUrl: baseUrl + 'Score',
 };
 
 
@@ -415,7 +416,7 @@ __webpack_require__.r(__webpack_exports__);
 var baseUrl = 'https://fstg.azurewebsites.net/api/';
 var environment = {
     production: false,
-    scoresUrl: baseUrl + 'Scores',
+    scoreUrl: baseUrl + 'Score',
 };
 /*
  * In development mode, to ignore zone related error stack frames such as

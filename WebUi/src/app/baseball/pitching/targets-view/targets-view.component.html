@@ -3,14 +3,13 @@
       <table class="table table-striped table-hover">
           <!-- <caption>Target Scores</caption> -->
           <tr>
-              <th scope="col">Id</th>
+              <th scope="col">User Id</th>
               <th scope="col">Score</th>
           </tr>
           <ng-container *ngFor="let targetScore of targetScores">
               <tr>
-
-                  <td>{{targetScore.id}}</td>
-                  <td>{{targetScore.score}} </td>
+                  <td>{{targetScore.userId}}</td>
+                  <td>{{targetScore.value}} </td>
               </tr>
           </ng-container>
       </table>

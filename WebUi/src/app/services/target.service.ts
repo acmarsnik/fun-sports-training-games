@@ -37,8 +37,8 @@ export class TargetService {
     );
   } */
 
-  getTargetScores(): Observable<{ id: number, score: number }[]> {
-    return this.http.get<{ id: number, score: number }[]>(this.allScoresUrl)
+  getTargetScores(): Observable<Score[]> {
+    return this.http.get<Score[]>(this.allScoresUrl)
     .pipe(
     );
   }

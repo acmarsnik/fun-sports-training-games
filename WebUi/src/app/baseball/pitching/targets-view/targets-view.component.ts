@@ -7,7 +7,7 @@ import { TargetService } from '../../../services/target.service';
   styleUrls: ['./targets-view.component.scss']
 })
 export class TargetsViewComponent implements OnInit {
-  @Input() targetScores: { id: number, score: number }[] = [];
+  @Input() targetScores: Score[];
   @Input() isVisible: boolean;
 
   constructor() { }
