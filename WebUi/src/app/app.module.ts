@@ -7,12 +7,14 @@ import { TargetAddComponent } from './baseball/pitching/target-add/target-add.co
 import { TargetsViewComponent } from './baseball/pitching/targets-view/targets-view.component';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './services/in-memory-data.service';
+import { EnvironmentComponent } from './environment/environment.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TargetAddComponent,
-    TargetsViewComponent
+    TargetsViewComponent,
+    EnvironmentComponent
   ],
   imports: [
     BrowserModule,

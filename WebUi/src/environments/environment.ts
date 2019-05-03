@@ -3,10 +3,14 @@
 // The list of file replacements can be found in `angular.json`.
 
 const baseUrl = 'https://fstg.azurewebsites.net/api/';
+const scoreUrl = baseUrl + 'Score';
+const allScoresUrl = scoreUrl + '/All';
 
 export const environment = {
   production: false,
-  scoreUrl: baseUrl + 'Score',
+  baseUrl: baseUrl,
+  scoreUrl: scoreUrl,
+  allScoresUrl: allScoresUrl
 };
 
 /*

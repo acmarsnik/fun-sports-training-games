@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { environment } from '../../environments/environment.local';
+import { environment } from '../../environments/environment';
 
 const options = {headers: new HttpHeaders({'Content-Type': 'application/json' })};
 @Injectable({
@@ -10,7 +10,7 @@ const options = {headers: new HttpHeaders({'Content-Type': 'application/json' })
 export class TargetService {
   target_scores: number[] = [0, 1];
   scoreUrl = environment.scoreUrl;
-  allScoresUrl = this.scoreUrl + "/All";
+  allScoresUrl = environment.allScoresUrl;
 
   constructor(private http: HttpClient) { }
 

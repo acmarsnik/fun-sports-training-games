@@ -8,7 +8,7 @@ import { TargetService } from '../../../services/target.service';
   styleUrls: ['./target-add.component.scss']
 })
 export class TargetAddComponent implements OnInit {
-  
+
   inputForm: FormGroup;
   score: number;
   isVisible: boolean = false;
@@ -17,7 +17,7 @@ export class TargetAddComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private targetService: TargetService) {
     this.createForm();
-    this.inputForm.setValue({scoreInput: 0})
+    this.inputForm.setValue({ scoreInput: 0 })
   }
 
   ngOnInit() {
@@ -30,30 +30,30 @@ export class TargetAddComponent implements OnInit {
     });
   }
 
-  onSubmit(){
+  onSubmit() {
     this.score = this.inputForm.value.scoreInput;
     this.targetService.addTarget(this.score).subscribe(it => {
       // this.targetScores = it;
-    } );
-    
+    });
+
   }
 
-  showHide(){
-    if(this.isVisible){
+  showHide() {
+    if (this.isVisible) {
       this.isVisible = false;
       this.showHideText = 'Show'
     }
-    else{
+    else {
       this.isVisible = true;
       this.showHideText = 'Hide'
     }
   }
 
-  getTargetScores(){
+  getTargetScores() {
     this.targetService.getTargetScores()
-    .subscribe(it => {
-      this.targetScores = it;
-    })
+      .subscribe(it => {
+        this.targetScores = it;
+      })
   }
 
 }
