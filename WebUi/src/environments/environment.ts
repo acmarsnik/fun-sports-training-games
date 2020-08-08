@@ -2,7 +2,7 @@
 // `ng build ---prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
-const baseUrl = 'http://localhost:82/api/api/';
+const baseUrl = 'https://fstg.azurewebsites.net/api/';
 const scoreUrl = baseUrl + 'Score';
 const allScoresUrl = scoreUrl + '/All';
 
