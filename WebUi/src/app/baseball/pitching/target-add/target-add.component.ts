@@ -11,8 +11,8 @@ import { IScore } from 'src/app/models/score';
 export class TargetAddComponent implements OnInit {
   inputForm: FormGroup;
   score: number;
-  isVisible = false;
-  showHideText = 'Show';
+  isVisible = true;
+  showHideText = 'Hide';
   targetScores: IScore[] = [];
 
   constructor(private fb: FormBuilder, private targetService: TargetService) {
