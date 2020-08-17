@@ -1,3 +1,5 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TargetAddComponent } from './target-add.component';
@@ -8,9 +10,9 @@ describe('TargetAddComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TargetAddComponent ]
-    })
-    .compileComponents();
+      imports: [FormsModule, ReactiveFormsModule, HttpClientTestingModule],
+      declarations: [TargetAddComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
