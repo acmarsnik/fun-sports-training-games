@@ -219,5 +219,8 @@
       }
     }
   },
-  "defaultProject": "fun-sports-training-games"
+  "defaultProject": "fun-sports-training-games",
+  "cli": {
+    "analytics": false
+  }
 }
