@@ -1,4 +1,4 @@
-const baseUrl = 'http://localhost:82/api/';
+const baseUrl = 'http://localhost:82/api/api/';
 const scoreUrl = baseUrl + 'Score';
 const allScoresUrl = scoreUrl + '/All';
 
