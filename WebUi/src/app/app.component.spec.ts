@@ -13,15 +13,15 @@ describe('AppComponent', () => {
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   }));
-  it(`should have as title 'fun-sports-training-games'`, async(() => {
+  it(`should have as title 'Fun Sports Training Games'`, async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('fun-sports-training-games');
+    expect(app.title).toEqual('Fun Sports Training Games');
   }));
   it('should render title in a h1 tag', async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to fun-sports-training-games!');
+    expect(compiled.querySelector('h1').textContent).toContain('Welcome to Fun Sports Training Games!');
   }));
 });
