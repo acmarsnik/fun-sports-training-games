@@ -7,6 +7,7 @@ import { TargetAddComponent } from './baseball/pitching/target-add/target-add.co
 import { TargetsViewComponent } from './baseball/pitching/targets-view/targets-view.component';
 import { EnvironmentComponent } from './environment/environment.component';
 import { AppRoutingModule } from './app-routing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { AppRoutingModule } from './app-routing.module';
     ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
     // Remove it when a real server is ready to receive requests.
