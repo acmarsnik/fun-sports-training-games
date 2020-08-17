@@ -1,21 +1,16 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { TargetService } from '../../../services/target.service';
+import { IScore } from 'src/app/models/score';
 
 @Component({
   selector: 'app-targets-view',
   templateUrl: './targets-view.component.html',
-  styleUrls: ['./targets-view.component.scss']
+  styleUrls: ['./targets-view.component.scss'],
 })
 export class TargetsViewComponent implements OnInit {
-  @Input() targetScores: Score[];
+  @Input() targetScores: IScore[];
   @Input() isVisible: boolean;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-    
-  }
-
-  
-
+  ngOnInit() {}
 }
