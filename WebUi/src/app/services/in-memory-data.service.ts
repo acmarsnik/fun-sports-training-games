@@ -1,7 +1,16 @@
-import { InMemoryDbService, RequestInfo, STATUS } from 'angular-in-memory-web-api';
-import { ResponseOptions } from '@angular/http';
+import {
+  InMemoryDbService,
+  RequestInfo,
+  STATUS,
+} from "angular-in-memory-web-api";
+import { HttpResponse } from "@angular/common/http";
 
-const targetScores = [
+interface Score {
+  id: number;
+  score: number;
+}
+
+const targetScores: Score[] = [
   { id: 1, score: 0 },
   { id: 2, score: 4 },
   { id: 3, score: 2 },
@@ -11,11 +20,10 @@ const targetScores = [
   { id: 7, score: 9 },
   { id: 8, score: 5 },
   { id: 9, score: 6 },
-  { id: 10, score: 3 }
+  { id: 10, score: 3 },
 ];
 
 export class InMemoryDataService implements InMemoryDbService {
-  
   createDb() {
     // const targetScores = [
     //   { id: 1, score: 0 },
@@ -29,24 +37,24 @@ export class InMemoryDataService implements InMemoryDbService {
     //   { id: 9, score: 6 },
     //   { id: 10, score: 3 }
     // ];
-    return {targetScores};
+    return { targetScores };
   }
 
-  post(reqInfo: RequestInfo){
+  post(reqInfo: RequestInfo) {
     const collectionName = reqInfo.collectionName;
-    if(collectionName === 'targetScores'){
+    if (collectionName === "targetScores") {
       const data = reqInfo.utils.getJsonBody(reqInfo.req);
-      targetScores.push({id: targetScores.slice(-1).pop().id + 1, score: data});
-      return reqInfo.utils.createResponse$(() =>{
-        const options: ResponseOptions = new ResponseOptions(
-          {
-            body: targetScores,
-            status: STATUS.OK
-          }
-        );
+      targetScores.push({
+        id: targetScores.slice(-1).pop().id + 1,
+        score: data,
+      });
+      return reqInfo.utils.createResponse$(() => {
+        const options: HttpResponse<Score[]> = new HttpResponse<Score[]>({
+          body: targetScores,
+          status: STATUS.OK,
+        });
         return options;
-      }
-    )
+      });
     }
   }
 }
