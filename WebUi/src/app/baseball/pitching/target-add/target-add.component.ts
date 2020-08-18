@@ -35,7 +35,7 @@ export class TargetAddComponent implements OnInit {
 
   onSubmit() {
     this.score = this.inputForm.value.scoreInput;
-    this.targetService.addTarget(this.score).subscribe((it) => {
+    this.targetService.addTarget(this.score).subscribe(it => {
       // this.targetScores = it;
     });
   }
@@ -51,7 +51,7 @@ export class TargetAddComponent implements OnInit {
   }
 
   getTargetScores() {
-    this.targetService.getTargetScores().subscribe((it) => {
+    this.targetService.getTargetScores().subscribe(it => {
       this.targetScores = it;
     });
   }
