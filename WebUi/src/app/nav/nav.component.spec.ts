@@ -37,4 +37,8 @@ describe('NavComponent', () => {
   it('should compile', () => {
     expect(component).toBeTruthy();
   });
+  it(`should have as title 'Fun Sports Training Games'`, async(() => {
+    const app = fixture.debugElement.componentInstance;
+    expect(app.title).toEqual('Fun Sports Training Games');
+  }));
 });
