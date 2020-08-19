@@ -1,0 +1,32 @@
+{
+  "files.trimTrailingWhitespace": true,
+  "git.autofetch": true,
+  "editor.formatOnSave": true,
+  "editor.detectIndentation": false,
+  "editor.autoIndent": "full",
+  "editor.tabSize": 2,
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
+  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
+  "typescript.preferences.quoteStyle": "single",
+  "typescript.preferences.importModuleSpecifier": "relative",
+  "html.format.wrapAttributes": "force-aligned",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "files.insertFinalNewline": true,
+  "peacock.color": "#4D2600",
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#803f00",
+    "activityBar.activeBorder": "#002010",
+    "activityBar.background": "#803f00",
+    "activityBar.foreground": "#e7e7e7",
+    "activityBar.inactiveForeground": "#e7e7e799",
+    "activityBarBadge.background": "#002010",
+    "activityBarBadge.foreground": "#e7e7e7",
+    "statusBar.background": "#4d2600",
+    "statusBar.foreground": "#e7e7e7",
+    "statusBarItem.hoverBackground": "#803f00",
+    "titleBar.activeBackground": "#4d2600",
+    "titleBar.activeForeground": "#e7e7e7",
+    "titleBar.inactiveBackground": "#4d260099",
+    "titleBar.inactiveForeground": "#e7e7e799"
+  }
+}

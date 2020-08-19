@@ -1,0 +1,16 @@
+{
+  "recommendations": [
+    "angular.ng-template",
+    "johnpapa.angular2",
+    "infinity1207.angular2-switcher",
+    "gregorbiswanger.json2ts",
+    "johnpapa.vscode-peacock",
+    "esbenp.prettier-vscode",
+    "ms-vscode.vscode-typescript-tslint-plugin",
+    "rbbit.typescript-hero",
+    "coenraads.bracket-pair-colorizer-2",
+    "P-de-Jong.vscode-html-scss",
+    "nrwl.angular-console",
+    "ryu1kn.partial-diff"
+  ]
+}
