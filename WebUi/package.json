@@ -1,5 +1,9 @@
 {
   "name": "fun-sports-training-games",
+  "prettier": {
+    "singleQuote": true,
+    "arrowParens": "avoid"
+  },
   "version": "0.0.0",
   "scripts": {
     "stats": "npx webpack-bundle-analyzer dist/fun-sports-training-games/stats.json",
