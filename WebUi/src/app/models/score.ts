@@ -1,7 +1,10 @@
-export interface IScore {
-  _id: string;
+export interface IBaseScore {
   userId: number;
   value: number;
+}
+
+export interface IScore extends IBaseScore {
+  _id: string;
 }
 
 export class Score implements IScore {
