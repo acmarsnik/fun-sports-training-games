@@ -20,9 +20,7 @@ export class TargetAddComponent implements OnInit {
     this.inputForm.setValue({ scoreInput: 0 });
   }
 
-  ngOnInit() {
-    this.getTargetScores();
-  }
+  ngOnInit() {}
 
   createForm() {
     this.inputForm = this.fb.group({
@@ -48,11 +46,5 @@ export class TargetAddComponent implements OnInit {
       this.isVisible = true;
       this.showHideText = 'Hide';
     }
-  }
-
-  getTargetScores() {
-    this.targetService.getTargetScores().subscribe(it => {
-      this.targetScores = it;
-    });
   }
 }

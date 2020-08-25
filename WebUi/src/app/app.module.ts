@@ -4,7 +4,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { TargetAddComponent } from './baseball/pitching/target-add/target-add.component';
-import { TargetsViewComponent } from './baseball/pitching/targets-view/targets-view.component';
 import { EnvironmentComponent } from './environment/environment.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -28,11 +27,10 @@ import { MatSortModule } from '@angular/material/sort';
   declarations: [
     AppComponent,
     TargetAddComponent,
-    TargetsViewComponent,
     EnvironmentComponent,
     NavComponent,
     DashboardComponent,
-    ScoresComponent
+    ScoresComponent,
   ],
   imports: [
     BrowserModule,
@@ -60,6 +58,6 @@ import { MatSortModule } from '@angular/material/sort';
     // )
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
