@@ -62,14 +62,8 @@ export class ScoresComponent implements OnInit {
       value: this.inputForm.value.scoreValue,
       userId: this.inputForm.value.userId,
     };
-    this.targetService.addScore(scoreToAdd).subscribe(addedScore => {
-      const newDataSourceData: IScore[] = JSON.parse(
-        JSON.stringify(this.dataSource.data)
-      );
-      newDataSourceData.push(addedScore);
-      this.dataSource.data = newDataSourceData;
-      this.refreshTable();
-      // this.targetScores = it;
+    this.targetService.addScore(scoreToAdd).subscribe(() => {
+      this.getScores();
     });
   }
 

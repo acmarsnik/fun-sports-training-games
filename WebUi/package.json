@@ -8,7 +8,7 @@
   "scripts": {
     "stats": "npx webpack-bundle-analyzer dist/fun-sports-training-games/stats.json",
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve -o",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
