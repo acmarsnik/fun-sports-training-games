@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, HostListener, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable } from '@angular/material/table';
@@ -38,6 +38,7 @@ export class ScoresComponent implements OnInit {
   public defaultPageIndex: number;
   public defaultPageSize: number;
   public defaultPageSizeOptions: number[];
+  public innerWidth: any;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -48,8 +49,16 @@ export class ScoresComponent implements OnInit {
     this.inputForm.setValue({ scoreValue: 0, userId: 1 });
   }
 
+  @HostListener('window:resize', ['$event'])
+  onResize() {
+    this.innerWidth = window.innerWidth;
+    this.setColSpans();
+  }
+
   ngOnInit() {
     this.getScores();
+    this.innerWidth = window.innerWidth;
+    this.setColSpans();
   }
 
   public pageEventReceiver(pageEvent: PageEvent) {
@@ -81,14 +90,14 @@ export class ScoresComponent implements OnInit {
     this.dataSource = new ScoresDataSource();
     this.scoresCols = 3;
 
-    this.rowHeight = 50;
-    this.rowHeightString = `${this.rowHeight}px`;
+    this.rowHeight = 3.125;
+    this.rowHeightString = `${this.rowHeight}rem`;
     this.minRows = 5;
 
     this.enterScoreRowSpan = this.minRows;
-    this.enterScoreColSpan = 1;
+    this.enterScoreColSpan = 3;
 
-    this.scoreHistoryColSpan = 2;
+    this.scoreHistoryColSpan = 3;
     this.scoreHistoryRowSpan = this.minRows;
 
     this.defaultPageIndex = 0;
@@ -156,5 +165,15 @@ export class ScoresComponent implements OnInit {
       this.dataSource = new ScoresDataSource(scores);
       this.refreshTable();
     });
+  }
+
+  private setColSpans() {
+    if (this.innerWidth > 768) {
+      this.enterScoreColSpan = 1;
+      this.scoreHistoryColSpan = 2;
+    } else {
+      this.enterScoreColSpan = 3;
+      this.scoreHistoryColSpan = 3;
+    }
   }
 }
